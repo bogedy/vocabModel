@@ -4,13 +4,13 @@ Exploratory Data Collection and Analysis: Predicting Rapper Vocabulary Size from
 
 Question: Can you predict a rapper's vocabulary size from their age and regional location?
 
-lyrics.py: scarping code
+[lyrics.py](https://github.com/bogedy/vocabModel/blob/master/lyrics.py): scarping code
 
-model.R: R script for analysis of the data csv
+[model.R](https://github.com/bogedy/vocabModel/blob/master/model.R): R script for analysis of the data csv
 
-RapSheet.csv: data csv
+[RapSheet.csv](https://github.com/bogedy/vocabModel/blob/master/RapSheet.csv): collected data in a csv
 
-corpus.py: (very long) List of song titles used:
+[corpus.py](https://github.com/bogedy/vocabModel/blob/master/corpus.py): (very long) strings of song titles used by region. at the end of each region is the code used in [lyrics.py](https://github.com/bogedy/vocabModel/blob/master/lyrics.py)
 
 A while ago I saw this cool experiment exploring who has the largest vocabulary in hip hop. After taking statistics this semester, I wanted to see if rappers from one coast had a statistically larger vocabulary than the other coast. I manually wrote the vocabulary values into a spreadsheet, loaded it into R, and found no statistical difference (without p-hacking and data dredging, that is). The sample size was pretty small, so I went about seeing how I could collect more data. These are the results.
 
