@@ -1,5 +1,5 @@
 #change this to project directory
-setwd("C:/Users/Isaiah/eclipse-workspace/vocab model and lyric scraping")
+setwd("C:/Users/Isaiah/git/vocabmodel")
 data=read.csv("RapSheet.csv")
 attach(data)
 location=as.factor(location)
@@ -16,4 +16,4 @@ anova(full_model)
 ((anova(reduced_model)[3,2]-anova(full_model)[4,2])/(reduced_model$df.residual-full_model$df.residual))/(anova(full_model)[4,2]/full_model$df.residual)
 #F statistic is 0.3505684
 anova(reduced_model,full_model)
-#huge p-value for the f-test! he do not reject the null, that the reduced model is better.
+#huge p-value for the f-test! we do not reject the null, that the reduced model is better.
