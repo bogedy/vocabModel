@@ -4,13 +4,13 @@ Exploratory Data Collection and Analysis: Predicting Rapper Vocabulary Size from
 
 Question: Can you predict a rapper's vocabulary size from their age and regional location?
 
-lyrics.py: scarping code
+[lyrics.py](https://github.com/bogedy/vocabModel/blob/master/lyrics.py): scarping code
 
-model.R: R script for analysis of the data csv
+[model.R](https://github.com/bogedy/vocabModel/blob/master/model.R): R script for analysis of the data csv
 
-RapSheet.csv: data csv
+[RapSheet.csv](https://github.com/bogedy/vocabModel/blob/master/RapSheet.csv): collected data in a csv
 
-corpus.py: (very long) List of song titles used:
+[corpus.py](https://github.com/bogedy/vocabModel/blob/master/corpus.py): (very long) strings of song titles used by region. at the end of each region is the code used in [lyrics.py](https://github.com/bogedy/vocabModel/blob/master/lyrics.py)
 
 A while ago I saw this cool experiment exploring who has the largest vocabulary in hip hop. After taking statistics this semester, I wanted to see if rappers from one coast had a statistically larger vocabulary than the other coast. I manually wrote the vocabulary values into a spreadsheet, loaded it into R, and found no statistical difference (without p-hacking and data dredging, that is). The sample size was pretty small, so I went about seeing how I could collect more data. These are the results.
 
@@ -59,6 +59,17 @@ Now in this model region is an even stronger predictor of vocabulary size. These
 The R2 value shows the percentage of variability in the data that is explained by the model. My reduced model has an adjusted R2 value of 0.7281. This is up from 0.7176 in the first model.
 
 When performing an F test for the reduced model v.s. full one, I got a p-value of 0.7889, showing that I cannot reject the null, that the reduced model account for a higher percentage of the variability explained by the model. 
+
+```
+> anova(reduced_model,full_model)
+Analysis of Variance Table
+
+Model 1: vocabsize ~ samplesize + location
+Model 2: vocabsize ~ samplesize + location + decade
+  Res.Df      RSS Df Sum of Sq      F Pr(>F)
+1     52 19132930                           
+2     49 18730902  3    402028 0.3506 0.7889
+```
 
 So what does this data say? The left columns are coefficients for the categorical variables of region, which take values 1 or 0. So the model predicts vocab size by multiplying the sample size by its coefficient (the last one in the table), and then adding the region coefficient (the east region coefficient is just the lack of other coefficients). While the coefficients are pretty small (only about 469-598 out of vocab sizes of several thousand), there is pretty clear evidence of the East Coast having the largest vocabulary, then the Midwest, then the South, then the West Coast.
 
