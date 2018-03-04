@@ -60,6 +60,17 @@ The R2 value shows the percentage of variability in the data that is explained b
 
 When performing an F test for the reduced model v.s. full one, I got a p-value of 0.7889, showing that I cannot reject the null, that the reduced model account for a higher percentage of the variability explained by the model. 
 
+```
+> anova(reduced_model,full_model)
+Analysis of Variance Table
+
+Model 1: vocabsize ~ samplesize + location
+Model 2: vocabsize ~ samplesize + location + decade
+  Res.Df      RSS Df Sum of Sq      F Pr(>F)
+1     52 19132930                           
+2     49 18730902  3    402028 0.3506 0.7889
+```
+
 So what does this data say? The left columns are coefficients for the categorical variables of region, which take values 1 or 0. So the model predicts vocab size by multiplying the sample size by its coefficient (the last one in the table), and then adding the region coefficient (the east region coefficient is just the lack of other coefficients). While the coefficients are pretty small (only about 469-598 out of vocab sizes of several thousand), there is pretty clear evidence of the East Coast having the largest vocabulary, then the Midwest, then the South, then the West Coast.
 
 The assumptions for linear regression are that the residuals (difference between the model and the data) for the model are normally distributed around mean 0. Graphs of these show that the assumptiosn were met.
