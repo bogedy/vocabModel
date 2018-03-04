@@ -12,7 +12,7 @@ Question: Can you predict a rapper's vocabulary size from their age and regional
 
 [corpus.py](https://github.com/bogedy/vocabModel/blob/master/corpus.py): (very long) strings of song titles used by region. at the end of each region is the code used in [lyrics.py](https://github.com/bogedy/vocabModel/blob/master/lyrics.py)
 
-A while ago I saw this cool experiment exploring who has the largest vocabulary in hip hop. After taking statistics this semester, I wanted to see if rappers from one coast had a statistically larger vocabulary than the other coast. I manually wrote the vocabulary values into a spreadsheet, loaded it into R, and found no statistical difference (without p-hacking and data dredging, that is). The sample size was pretty small, so I went about seeing how I could collect more data. These are the results.
+A while ago I saw [this cool experiment](https://pudding.cool/2017/02/vocabulary/) exploring who has the largest vocabulary in hip hop. After taking statistics this semester, I wanted to see if rappers from one coast had a statistically larger vocabulary than the other coast. I manually wrote the vocabulary values into a spreadsheet, loaded it into R, and found no statistical difference (without p-hacking and data dredging, that is). The sample size was pretty small, so I went about seeing how I could collect more data. These are the results.
 
 The first issue is using an API to collect lyrics. Genius.com pays royalties on their lyrics and does not make them accessible through their API. This method uses the API to find the URL for a given song, and then uses BeautifulSoup to scrape the page for the lyrics. My code came from this blog post, where you can see the code in its original form.
 
