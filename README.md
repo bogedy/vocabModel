@@ -1,3 +1,8 @@
+
+#EDIT:
+I made this freshman year of college, I'm better are statistics now :) I'll leave this here if it inspires any other freshmen.
+
+
 # vocabModel
 
 Exploratory Data Collection and Analysis: Predicting Rapper Vocabulary Size from Sample Vocabulary, Region, and Age
